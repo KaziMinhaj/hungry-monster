@@ -79,13 +79,9 @@ function displayingredients(response) {
             pTag.innerHTML = `<i class="fas fa-check-square"></i> ${item}`;
             document.getElementById("ingredients-container").appendChild(pTag);
         }
-
-
     }
-
     document.getElementById("meal-container").style.display = "none";
     document.getElementById("ingredients-container").style.display = "block"
-
 }
 
 function closeBtn() {

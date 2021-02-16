@@ -1,10 +1,19 @@
+displayItems("beef");
+
 const search = document.getElementById("search");
 search.addEventListener("click", function () {
-    const keyWord = document.getElementById("input-box").value.trim();
+
+    //from details page if we want to search again then making sure grid & none display
+    document.getElementById("meal-container").style.display = "grid";
+    document.getElementById("ingredients-container").style.display = "none";
+
+    const keyWord = document.getElementById("input-box").value;
     if (keyWord == "") {
         alert("Item can not be empty")
     }
     else {
+        console.log("clicked");
+        document.getElementById("meal-container").innerHTML = '';
         displayItems(keyWord);
     }
 
@@ -13,9 +22,11 @@ search.addEventListener("click", function () {
 function displayItems(keyWord) {
     fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${keyWord}`)
         .then(response => response.json())
-        .then(response => { displayItems(response) });
+        .then(response => { displayItem(response) });
 
-    function displayItems(response) {
+
+    function displayItem(response) {
+        console.log(response);
         const data = response.meals;
         for (let i = 0; i < data.length; i++) {
             const element = data[i];
@@ -29,8 +40,7 @@ function displayItems(keyWord) {
             eachMealDiv.innerHTML = `
             <img id="image" src=${imgUrl}>
             <h6 id="name">${name}</h6>
-            <button onclick="displayDetails('${name}')" id="details">Details</button>
-        `
+            <button onclick="displayDetails('${name}')" id="details">Details</button>`
             mealContainer.appendChild(eachMealDiv);
         }
     };
@@ -45,13 +55,13 @@ function displayDetails(name) {
 
 function displayingredients(response) {
     const data = response.meals
-    console.log(data[0]);
+    // console.log(data[0]);
     const ingredWrapper = document.getElementById("ingredients-container");
     ingredWrapper.innerHTML = `
         <button onclick="closeBtn()" id="close-btn" class="far fa-window-close"></button>
         <img src=${data[0].strMealThumb}>
-        <h3>${data[0].strMeal}</h3>
-        <h5>Ingrediants</h5>
+        <h3 id="details-name">${data[0].strMeal}</h3>
+        <h5 id="ingred">Ingrediants</h5>
     `
     const object = data[0];
     const arr1 = [];
@@ -85,8 +95,13 @@ function displayingredients(response) {
 }
 
 function closeBtn() {
-    // document.getElementById("meal-container").style.display = "block";
-    document.getElementById("ingredients-container").style.display = "none"
+    //clearing child elements
+    document.getElementById("meal-container").innerHTML = '';
+    document.getElementById("ingredients-container").style.display = "none";
+    document.getElementById("meal-container").style.display = "grid";
+    displayItems("beef");
+
+
 }
 
 

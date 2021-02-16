@@ -3,9 +3,8 @@
   display: flex;
   justify-content: center;
   margin-top: 30px;
-  border-radius: 10px;
   padding-left: 10px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 #input-box {
   border: none;
@@ -19,9 +18,13 @@
   color: white;
   background-color: rgb(243, 82, 64);
   padding: 10px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 #icon {
   border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 /* search bar end */
 
@@ -77,4 +80,13 @@ input:focus {
 #close-btn {
   border: none;
   margin-left: 355px;
+}
+#details-name {
+  display: flex;
+  justify-content: center;
+}
+
+#ingred {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

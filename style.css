@@ -2,7 +2,7 @@
 .search-container {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 30px;
   border-radius: 10px;
   padding-left: 10px;
   margin-bottom: 50px;
@@ -17,7 +17,7 @@
 .search-button {
   border: none;
   color: white;
-  background-color: tomato;
+  background-color: rgb(243, 82, 64);
   padding: 10px;
 }
 #icon {
@@ -27,13 +27,14 @@
 
 #meal-container {
   display: grid;
-  grid-template-columns: repeat(4, 0.1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 .each-meal-div {
-  width: 200px;
-  background-color: #f8f7f5;
-  margin: 20px;
+  background-color: #f0f0f0;
+  margin: 10px;
   border-radius: 10px;
 }
 
@@ -44,11 +45,32 @@
 }
 
 #name {
-  padding: 10px;
+  padding: 5px;
   display: flex;
   justify-content: center;
 }
 
 input:focus {
   outline: none;
+}
+#details {
+  color: white;
+  background-color: rgb(243, 82, 64);
+  border-radius: 5px;
+  border: none;
+  width: 30%;
+  margin-left: 75px;
+  margin-bottom: 10px;
+}
+#ingredients-container {
+  width: 400px;
+  display: none;
+  background-color: rgb(243, 243, 243);
+  margin-left: 480px;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+#ingredients-container img {
+  width: 100%;
 }

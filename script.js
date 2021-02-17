@@ -86,6 +86,7 @@ function displayingredients(response) {
         console.log(item);
         if (item != null) {
             const pTag = document.createElement("p");
+            pTag.id = "pTag";
             pTag.innerHTML = `<i class="fas fa-check-square"></i> ${item}`;
             document.getElementById("ingredients-container").appendChild(pTag);
         }

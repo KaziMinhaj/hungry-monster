@@ -66,20 +66,21 @@ input:focus {
   margin-bottom: 10px;
 }
 #ingredients-container {
-  width: 400px;
+  width: 600px;
   display: none;
   background-color: rgb(243, 243, 243);
-  margin-left: 480px;
+  margin-left: 370px;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 20px;
 }
 #ingredients-container img {
-  width: 100%;
+  margin-left: 150px;
+  width: 50%;
 }
 #close-btn {
   border: none;
-  margin-left: 355px;
+  margin-left: 550px;
 }
 #details-name {
   display: flex;
@@ -87,6 +88,11 @@ input:focus {
 }
 
 #ingred {
-  margin-top: 20px;
+  margin-left: 50px;
   margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#pTag {
+  margin-left: 50px;
 }
